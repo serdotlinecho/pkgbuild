@@ -25,6 +25,7 @@ depends=(
   openssh
   p7zip
   pkgbuild-introspection
+  pkgstats
   powertop
   pulseaudio
   pulseaudio-alsa
