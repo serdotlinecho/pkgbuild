@@ -1,0 +1,73 @@
+# Maintainer: Suhaimi Ghazali <serdotlinecho@gmail.com>
+
+pkgname=nbsmsg-core
+pkgver=1.0
+pkgrel=1
+pkgdesc="A set of core packages for all installations."
+arch=('any')
+url="http://github.com/serdotlinecho/pkgbuild"
+license=('MIT')
+depends=(
+  alsa-utils
+  ca-certificates
+  cmake
+  curl
+  ddrescue
+  dnsutils
+  expac
+  git
+  grub
+  htop
+  inetutils
+  jnettop
+  lsof
+  nmap
+  openssh
+  p7zip
+  pkgbuild-introspection
+  powertop
+  pulseaudio
+  pulseaudio-alsa
+  python2
+  python
+  python-sh
+  reflector
+  renameutils
+  rsync
+  sudo
+  tmux
+  tree
+  unrar
+  unzip
+  vim
+  wget
+  zip
+  zsh
+  )
+optdepends=(
+  )
+conflicts=(
+  pacman-color
+  )
+source=(
+  blacklist.conf
+  i915.conf
+  reflector.service
+  reflector.timer
+  )
+sha256sums=(
+  '0ee6bfc9ddbbe7161df139e388a60bc4db95fc2438b64c82e7a051a9974cace1'
+  '45fcf00e3f7177c42f18c7b5bf2ed2074c11d440404705e082a5f9eea52d30b8'
+  '3dbcf11921043a24a6690bfe38b939188d0c31bac571987b2dd632b00af8b5f2'
+  '9e081aedafcf49c90b0398f3f7648ff90837ac36e976a638e341865977ad5521'
+  )
+install=nbsmsg-core.install
+
+package() {
+  install -Dm644 $srcdir/${source[1]} $pkgdir/etc/modprobe.d/${source[0]}
+  install -Dm644 $srcdir/${source[1]} $pkgdir/etc/modprobe.d/${source[1]}
+  install -Dm644 $srcdir/${source[2]} $pkgdir/etc/systemd/system/${source[2]}
+  install -Dm644 $srcdir/${source[3]} $pkgdir/etc/systemd/system/${source[3]}
+}
+
+# vim:set ts=2 sw=2 et:
