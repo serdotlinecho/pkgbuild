@@ -25,7 +25,6 @@ depends=(
   openssh
   p7zip
   pkgbuild-introspection
-  pkgstats
   powertop
   pulseaudio
   pulseaudio-alsa
@@ -42,6 +41,7 @@ depends=(
   unzip
   vim
   wget
+  youtube-dl
   zip
   zsh
   )
